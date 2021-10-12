@@ -5,6 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 1 | Demo</title>
+
+    <!--in document styling in CSS-->
+    <style type= "text/css">
+        /*inside of the style you must write in CSS*/
+        /*there are three ways to select elements to style*/
+        /*by element tag type*/
+        body{
+
+            background-color:grey;
+            color:white; /*font color*/
+            background-image:url(images/body_bg.png);
+        }
+
+        h2{
+
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        p{
+            font-size: 16pt;
+        }
+
+        /*stlye by class, collection of elements with same class value*/ 
+        .group{
+
+            color:rgb(76, 9, 139);
+            
+        }
+
+        /*style an element by id*/ 
+        #batmobile{
+
+            border:5px solid #ffffff; /*hexadecimal color*/
+        }
+    </style>
+
 </head>
 <body>
     <!--This is how you write HTML comments-->
@@ -12,18 +48,18 @@
     <!--Block level elements: create page structures, start on new lines and span length of page-->
 
     <!--Heading Tags-->
-    <h1>Heading 1</h1><!--only 1 per page, biggest one-->
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6><!--smallest-->
+    <h1 style= "border:1px solid red;">Heading 1</h1><!--only 1 per page, biggest one-->
+    <h2 style= "background-color: orange;">Heading 2</h2>
+    <h3 style= "border:1px solid yellow">Heading 3</h3>
+    <h4 style= "background-color: green;">Heading 4</h4>
+    <h5 style= "border:1px solid blue">Heading 5</h5>
+    <h6 style= "background-color: indigo;">Heading 6</h6><!--smallest-->
 
     <!--below is a horizontal rule which is another block level element-->
     <hr>
 
     <!--inserting images-->
-    <img src= "images/batmobile.jpg" alt= "Batman's whip" title= "COWABUNGA BATMAN" />
+    <img src= "images/batmobile.jpg" alt= "Batman's whip" title= "COWABUNGA BATMAN" id= "batmobile"/>
     <!--src attribut describes where image is-->
     <!--alt attribute helps search engine optimization as well as screen readers-->
     <img src= "images/car.jpg" alt= "futuristic concept car" />
@@ -35,17 +71,34 @@
     <ol>
         <!--list items add things to lists-->
         <li>Game of Thrones</li>
-        <li>Black Sails</li>
+        <li class= "group">Black Sails</li>
         <li>Lord of the Rings</li>
 
     </ol>
 
     <!--unordered lists are bulleted-->
     <ul>
-        <li>Cowboy Bebop</li>
+        <li class= "group">Cowboy Bebop</li>
         <li>Samurai Champloo</li>
         <li>Aeon Flux</li>
     </ul>
+
+    <!--paragraph tag, also block level-->
+    <p class= "group">Wafer cupcake soufflé. Ice cream marzipan macaroon. Cotton candy jelly pastry jelly-o donut. Lemon drops cake chupa chups tart biscuit chupa chups croissant brownie.</p>
+        <!--breakspace-->
+      <br>
+      <br>  
+    <p>Dragée macaroon croissant macaroon croissant muffin wafer macaroon jelly. <span id= "orange">Sweet roll</span> jujubes wafer chupa chups pastry. Chupa chups tootsie roll tart macaroon soufflé fruitcake tiramisu. Cotton candy icing biscuit bear claw chocolate jelly pudding.</p>
+
+    <!--IN LINE TAGS, not block level tags, used in line with other elements, usually paragraphs-->
+
+    <p>We can make text <b>bold</b> using the bold tag</p>
+    <p>We can make text <i>italic</i> using the italic tag</p>
+    <p class= "group">We can make text <u>underlined</u> using the underline tag tag</p>
+
+    <!--special optimization (SEO) inline tags-->
+    <p>We can also make text <strong>bold</strong> with the strong tag</p>
+    <p>We can also make text <em>italicized</em> with the the emphasis tag</p>
 
 </body>
 </html>
