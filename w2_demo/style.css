@@ -1,0 +1,92 @@
+/*stylesheet for w2d2 demo*/
+
+/*BACKGROUND----------------*/
+body{
+
+    background-color: #999999;
+    /*background-image:url( -file path + name;*/
+}
+/*WRAPPER----------------*/
+#wrapper{
+
+    /*to center in browser, give a width*/
+    width: 780px;
+    /*to center, give a margin: auto*/
+    margin: auto;/* auto to space on left and right*/
+    border:1px solid black;
+    background-color: #abafb1;
+    /*add space between content and border with padding*/
+    padding:10px; /*top, right, botom, left*/
+
+}
+/*HEADER----------------*/
+h1{
+
+    color:whitesmoke; /*text color*/
+    text-align: center;
+    /*line height centers verticall, must be equal to the height*/
+    line-height: 100px; 
+    height:100px;
+}
+#header{
+
+    background-color: goldenrod;
+}
+/*NAV----------------*/
+#nav{
+
+    width:780px;
+    height:50px;
+    background-color: darkgoldenrod;
+    border-top:1px solid white;
+}
+
+#buttons{
+
+    margin:auto;
+    width:315px;
+    height:50px;
+}
+
+.btn{ /*class only applied to anchor tags*/
+
+    display:block;
+    float:left;
+    width:100px;
+    height:50px;
+    margin-right: 2px; /*space to the right of the button*/
+    line-height:50px;
+    text-align: center;
+    /*remove underline*/
+    text-decoration: none;
+    background-color: darkslateblue;
+    font-weight: bold;
+    color: #abafb1;
+}
+
+/*4 link states, link, hover, active, visted*/
+.btn:hover{
+
+    background-color: blueviolet;
+}
+
+.btn:active{
+
+    background-color: black;
+}
+
+.btn:visited{
+
+    background-color: blue;
+}
+
+/*CONTENT----------------*/
+
+/*FOOTER----------------*/
+#footer{
+
+    width:760px;
+    height:40px;
+    text-align: center;
+    font-size: 10px;
+}
