@@ -5,20 +5,91 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
+#fixed{
+    position: fixed;
+    width: 100%; /*width and height can be described as percentages as well as puixels*/
+    height: 25px;
+    border-bottom: 1px solid black;
+    background-color: rgba(255, 0, 0, .5);/*a stands for alpha channel, deals with transparency, 0 is opaque, 1 is tranparent*/
+    /*z inex only works with fixed, absolute and relative elements, higher the z index, the more foward it is*/
+    z-index: 5;
+}
 #wrapper{
+    position: relative; /*position property gives access to top, right, bottom and left properties*/
+    top: 100px;
     width: 960px;
     padding: 10px;
     background-color: white;
     margin: auto;
     box-shadow: 4px 0px 8px black; /*offset x, offset y, blur-radius, color*/
 }
+#main-header{
+    position: relative;
+    width: 960px;
+    height: 110px;
+    margin-top: 30px;
+}
+h1{
+    float: left;
+}
 #main-nav{
-    width: 300px;
+    position: absolute; /* cannot give a child element a position of absolute unless its parent has a position set*/
+    width: 303px;
     height: 40px;
     margin: 20px;
-    border: 1px solid red;
+    left: 600px;
+    top: 10px;
+}
+.btn{
+    float: left; /*puts buttons next to each other*/
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    text-decoration: none; /*removes underline*/
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center; /*horizontal alignment*/
+    line-height: 40px; /* vertical alignment*/
+    margin-right: 1px;
+}
+.btn:hover{
+    background-color: red;
+    color: black;
 }
 .section{
+    position: relative;
     margin: 30px 0; /*top+bottom, left+right*/
     border-bottom: 2px solid #333333;
+}
+#boxes{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    margin: -100px 0 0 600px; /*negative margin value moves closer as opposed to away*/
+}
+#red{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+    background-color: red;
+    z-index: 0;
+}
+#green{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 30px;
+    background-color: green;
+    z-index: 1;
+}
+#blue{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 45px;
+    background-color: blue;
+    z-index: 2;
 }
