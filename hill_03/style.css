@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(59, 26, 182);
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+#container{
+    position: relative; 
+    width: 960px;
+    padding: 10px;
+    background-color: goldenrod;
+    margin: auto;
+    box-shadow: 0px 0px 10px black; 
+}
+.btn{
+    float: left;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(61, 61, 231);
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center; 
+    line-height: 40px; 
+    margin-right: 1px;
+}
+.btn:hover{
+    color: goldenrod;
+}
+.section{
+    width: 640px;
+    height: 400px;
+    padding-top :25px;
+    margin: 10px;
+    text-align: left;
+}
+#hobbies{
+    position: absolute;
+    width: 165px;
+    height: 100px;
+    margin: -100px 0 0 600px;
+    left: 150px;
+    bottom: 410px;
+}
+.heading{
+    width: 100px;
+    height: 25px;
+    background-color: rgb(117, 9, 117);
+}
+.footer{
+    padding-top: 30px;
+}
+.content{
+    background-color: rgb(117, 9, 117);
+}
