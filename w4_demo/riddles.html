@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type=text/javascript src="week4.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1 id="title">Andrew Hill</h1>
+        </div>
+        <div id="nav">
+            <div id="buttons">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="schools.html" class="nav-link">SCHOOLS</a>
+                <a href="riddles.html" class="nav-link">RIDDLES</a>
+            </div>
+        </div>
+        <div id="content">
+            <h2 class="section-title">Riddles</h2>
+            <!--reusable div for each riddle-->
+            <div class="questions">
+                <p class="question-text">1. People make me, change me, save me, and raise me, what am I?</p>
+                <div class="answer-btn">
+                    <input class="get" type="button" value="ANSWER" onclick="answer1();"/><!--creates clickable button-->
+                </div>
+                <span class="the-answer" id="question1"></span><!--creates empty element for js to write answer to in page-->
+            </div>
+            <div class="questions">
+                <p class="question-text">2. What two words added together contain the most letters?</p>
+                <div class="answer-btn">
+                    <input class="get" type="button" value="ANSWER" onclick="answer2();"/><!--creates clickable button-->
+                </div>
+                <span class="the-answer" id="question2"></span><!--creates empty element for js to write answer to in page-->
+            </div>
+            <div class="questions">
+                <p class="question-text">3. What four-letter word can be written forward, backward, or upside down, and can still be read from left to right?</p>
+                <div class="answer-btn">
+                    <input class="get" type="button" value="ANSWER" onclick="answer3();"/><!--creates clickable button-->
+                </div>
+                <span class="the-answer" id="question3"></span><!--creates empty element for js to write answer to in page-->
+            </div>
+        </div>
+        <div id="footer">
+            <p class="copy">&copy;2021 | Andrew Hill | GDS111.21</p>
+        </div>
+    </div>
+</body>
+</html>
