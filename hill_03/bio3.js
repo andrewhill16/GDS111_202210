@@ -5,6 +5,9 @@ var store4="A Bed"
 var store5="Your Left Hand"
 var store6="A Cold"
 var store7="The Letter G"
+var store8="A Coffin"
+var store9="The Letter R"
+var store10="A Match"
 
 function answer1(){
     document.getElementById("question1").innerHTML = store1;
@@ -26,4 +29,13 @@ function answer6(){
 }
 function answer7(){
     document.getElementById("question7").innerHTML = store7;
+}
+function answer8(){
+    document.getElementById("question8").innerHTML = store8;
+}
+function answer9(){
+    document.getElementById("question9").innerHTML = store9;
+}
+function answer10(){
+    document.getElementById("question10").innerHTML = store10;
 }
