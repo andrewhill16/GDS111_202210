@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators Demo</title>
+    <script type="text/javascript" src="demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="updatescreen();">
+    <div id="wrapper">
+        <header>
+            <h1>Six Shooter | Gun Program</h1><!--could use this or impress kt with custom graphic-->
+            <!--will need custom image here-->
+        </header>
+
+        <!--div box that holds the traget image, custom or pulled from online-->
+        <div id="target">
+            <!--img src="?" here-->
+        </div><!--end target-->
+
+        <nav><!--nav box holds buttons and info for game-->
+            <!--left info box-->
+            <section id="left">
+                <div id="total-ammo">
+
+                </div>
+                <div id="current-ammo">
+
+                </div>
+            </section>
+            <!--right info bax-->
+            <div id="right">
+                <form>
+                    <p class="btn"><!--shoot button-->
+                        <input type="button" value="BUTTON" class="shoot" onclick="shoot();"/>
+                    </p>
+                    <p class="btn"><!--reload button-->
+                        <input type="button" value="BUTTON" class="reload" onclick="reload();"/>
+                    </p>
+                </form>
+            </div>
+        </nav><!--end nav-->
+        <footer>
+            <p class="copy">&copy;2021 | HTML & JavaScript</p>
+        </footer>
+    </div><!--end wrapper-->
+    <!--HTML audio players go below this line but inside of the body-->
+</body>
+</html>
