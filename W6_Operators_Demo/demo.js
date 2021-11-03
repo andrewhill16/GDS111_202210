@@ -11,6 +11,10 @@ function shoot(){
         //lower current ammo in gun by 1
         //currentAmmo = currentAmmo - 1 //long way
         currentAmmo-- //fast way, decrementation, minus 1
+        //adding in play function for the sound
+        document.getElementById("gun").play();
+        //gun sounds will play as fast as trigger is pulled by setting it back to zero
+        document.getElementById("gun").currentTime=0;
     }
     //once if statement has run, call updatescreen()
     updatescreen()
@@ -31,6 +35,9 @@ function reload(){
     var difference = getDiff(maxAmmo, currentAmmo)
     //find value difference and send ammo values
     //once getDiff job is done, returns c to where it was called
+    if(difference > 0 && totalAmmo != 0){
+        document.getElementById("reload").play();
+    }
     if (totalAmmo >= difference){
         currentAmmo += difference //currentAmmo = currentAmmo + difference
         totalAmmo -= difference //totalAmmo = totalAmmo - difference

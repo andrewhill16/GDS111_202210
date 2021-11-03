@@ -8,7 +8,49 @@
     <script type="text/javascript" src="gun.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    
+<body onload="updatescreen();">
+    <div id="wrapper">
+        <header>
+            <h1 class="game-title">Six Shooter | Gun Program</h1><!--could use this or impress kt with custom graphic-->
+        </header>
+        <div id="target">
+            <img class="target" src="images/Sans_undertale.jpg" alt="sans" title="you're gonna have a bad time">
+        </div><!--end target-->
+
+        <nav><!--nav box holds buttons and info for game-->
+            <!--left info box-->
+            <section id="left">
+                <p class="ammo-counters">Total Ammo</p>
+                <div id="total-ammo">
+
+                </div>
+                <p class="ammo-counters">Current Ammo</p>
+                <div id="current-ammo">
+
+                </div>
+            </section>
+            <!--right info box-->
+            <div id="right">
+                <form>
+                    <p class="btn"><!--shoot button-->
+                        <input type="button" value="SHOOT" class="shoot" onclick="shoot();"/>
+                    </p>
+                    <p class="btn"><!--reload button-->
+                        <input type="button" value="RELOAD" class="reload" onclick="reload();"/>
+                    </p>
+                </form>
+            </div>
+        </nav><!--end nav-->
+        <footer>
+            <p class="copy">&copy;2021 | HTML & JavaScript</p>
+        </footer>
+    </div><!--end wrapper-->
+    <!--HTML audio players go below this line but inside of the body-->
+    <audio id="gun" src="sounds/the first note of megalovania.mp3">
+        <p>Your browser sucks and doesn't know HTML5.</p>
+    </audio>
+    <audio id="reload" src="sounds/HALO Shield Recharge.mp3">
+        <p>Your browser sucks and doesn't know HTML5.</p>
+    </audio>
 </body>
 </html>

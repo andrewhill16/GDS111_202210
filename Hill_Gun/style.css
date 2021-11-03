@@ -1,15 +1,74 @@
+body{
+    background-image: url(images/background.jpg);
+}
 #wrapper{
-    border: 1px solid red;
     width: 980px;
-    height: 500px;
+    height: 700px;
     margin: auto;
-    box-shadow: 3px 3px 10px black;
+    box-shadow: 3px 3px 3px 8px black;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .85);
 }
 .game-title{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 3px 3px 3px gold;
 }
+/*gate page buttons*/
 #play-btn{
     position: relative;
     top: 200px;
+}
+.play-btn{
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    left: 410px;
+    text-decoration: none;
+    background-color: black;
+    font-size: 20px;
+    color: white;
+}
+.play-btn:hover{
+    color: gold;
+}
+/*ammo count and shoot/reload buttons*/
+#total-ammo{
+    font-size: 38px;
+    border: 1px solid black;
+    line-height: 38px;
+    width: 38px;
+}
+#current-ammo{
+    font-size: 38px;
+    border: 1px solid black;
+    line-height: 38px;
+    width: 38px;
+}
+#right{
+    position: relative;
+    float: right;
+    padding: 20px;
+    bottom: 200px;
+}
+.btn{
+    position: relative;
+    height: 110px;
+    width: 120px;
+}
+.ammo-counters{
+    font-size: 20px;
+    text-shadow: 3px 3px 3px gold;
+}
+/*target*/
+.target{
+    position: relative;
+    left: 375px;
+    padding: 5px;
+}
+.copy{
+    position: relative;
+    padding: 20px;
+    left: 375px;
+    top: 20px;
 }
