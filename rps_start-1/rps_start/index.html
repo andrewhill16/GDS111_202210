@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <meta name="author" content="Jay Aguiar">
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="rps.js"></script>
 </head>
 <body>
@@ -27,11 +27,16 @@
         <br>
         <br>
         <nav>
-            <a href="#" id="rock">Rock</a>
-            <a href="#" id="paper">Paper</a>
-            <a href="#" id="scissors">Scissors</a>
+            <button id="rock">Rock</a>
+            <button id="paper">Paper</a>
+            <button id="scissors">Scissors</a>
         </nav>
-        <canvas width="1000" height="600"></canvas>
+        <div id="result">
+            <p>PLAYER CHOSE: <span id="pChoice"></span></p>
+            <p>COMPUTER CHOSE: <span id="cChoice"></span></p>
+            <br>
+            <p>RESULTS: <span id="results"></span></p>
+        </div>
     </div>
     <script src="rps.js"></script>
 </body>
