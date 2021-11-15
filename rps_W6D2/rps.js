@@ -13,9 +13,9 @@ pics[2] = "images/house_targaryen.png"
 
 var pics2 = new Array()
 
-pics2[0] = "images/house_stark.png"
-pics2[1] = "images/house_lannister.png"
-pics2[2] = "images/house_targaryen.png"
+pics2[0] = "images/house_stark2.png"
+pics2[1] = "images/house_lannister2.png"
+pics2[2] = "images/house_targaryen2.png"
 
 //create array holding the button elements
 //document.querySelectorAll grabs all of one element type
@@ -90,13 +90,13 @@ function play(id) {
 
                 //alert("You LOST to the computer!")
 
-                showResults("House Stark", "House Lannister", "Hear me Roar")
+                showResults("House Stark", "House Lannister", "Hear me Roar! House Lannister Wins")
             }
             else {//comp is scissors
 
                 //alert("You WIN with your ROCK!")
 
-                showResults("House Stark", "House Targaryen", "Winter is Coming")
+                showResults("House Stark", "House Targaryen", "Winter is Coming! House Stark Wins")
             }
 
             //break statements breaks us out of the switch/case
@@ -115,13 +115,13 @@ function play(id) {
     
                 //alert("You LOST to the computer!")
 
-                showResults("House Lannister", "House Targaryen", "Fire and Blood")
+                showResults("House Lannister", "House Targaryen", "Fire and Blood! House Targaryen Wins")
             }
             else {//comp is scissors
     
                 //alert("You WIN with your PAPER!")
 
-                showResults("House Lannister", "House Stark", "Hear me Roar")
+                showResults("House Lannister", "House Stark", "Hear me Roar! House Lannister Wins")
             }
 
             break
@@ -139,13 +139,13 @@ function play(id) {
     
                 //alert("You LOST to the computer!")
 
-                showResults("House Targaryen", "House Stark", "Winter is Coming")
+                showResults("House Targaryen", "House Stark", "Winter is Coming! House Stark Wins")
             }
             else {//comp is paper
     
                 //alert("You WIN with your SCISSORS!")
 
-                showResults("House Targaryen", "House Lannister", "Fire and Blood")
+                showResults("House Targaryen", "House Lannister", "Fire and Blood! House Targaryen Wins")
             }
             break
 

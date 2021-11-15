@@ -1,6 +1,7 @@
 body{
     display:flex;
     justify-content:center;
+    background-image: url(images/fire_background.jpg);
 }
 nav{
     display:flex;
@@ -11,6 +12,9 @@ nav{
     width:1018px;
     border:1px solid black;
     padding:7px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(255, 0, 0, 0.75);
+    box-shadow: 4px 4px 8px gold;
 }
 canvas{
     border: 1px solid black;
@@ -28,12 +32,16 @@ a:link, a:visited{
     height: 120px;
     margin: 10px;
     padding: 10px;
+    position: relative;
+    left: 210px;
 }
 .computer{
     width: 720px;
     height: 120px;
     margin: 10px;
     padding: 10px;
+    position: relative;
+    left: 210px;
 }
 #rock_p{
     height: 150px;
@@ -58,4 +66,14 @@ a:link, a:visited{
 #scissors_c{
     height: 150px;
     width: 175px;
+}
+.player-heading{
+    text-align: center;
+}
+.computer-heading{
+    text-align: center;
+}
+#result{
+    position: relative;
+    left: 290px;
 }
