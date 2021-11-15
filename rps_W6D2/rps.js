@@ -7,15 +7,15 @@ var pics = new Array() //creates an empty array
 
 //assign values to array -- "population"
 //[#] denotes index --> it's like a house number and array is the street name; array name + index gives access to the indiv value
-pics[0] = ""
-pics[1] = ""
-pics[2] = ""
+pics[0] = "images/house_stark.png"
+pics[1] = "images/house_lannister.png"
+pics[2] = "images/house_targaryen.png"
 
 var pics2 = new Array()
 
-pics2[0] = ""
-pics2[1] = ""
-pics2[2] = ""
+pics2[0] = "images/house_stark.png"
+pics2[1] = "images/house_lannister.png"
+pics2[2] = "images/house_targaryen.png"
 
 //create array holding the button elements
 //document.querySelectorAll grabs all of one element type
@@ -76,27 +76,27 @@ function play(id) {
         //cases need to be built for *every* option p_choice can be! 
 
         //0 is ROCK
-        case 0://case for when p_choice == 0
+        case 0://case for when p_choice == 0 //rock=house stark
             if (c_choice == 0) {//comp is rock
 
                 //alert the user that there has been a draw
                 //alert("Bloody hell let's call it a DRAW!")
 
                 //call showResults() and pass correct values for: pChoice, cChoice, Results
-                showResults("Rock!", "Rock!", "It's a DRAW")
+                showResults("House Stark", "House Satrk", "DRAW")
 
             }
             else if (c_choice == 1) {//comp is paper
 
                 //alert("You LOST to the computer!")
 
-                showResults("Rock", "Paper", "You Lose")
+                showResults("House Stark", "House Lannister", "Hear me Roar")
             }
             else {//comp is scissors
 
                 //alert("You WIN with your ROCK!")
 
-                showResults("Rock", "Scissors", "You Wun")
+                showResults("House Stark", "House Targaryen", "Winter is Coming")
             }
 
             //break statements breaks us out of the switch/case
@@ -104,48 +104,48 @@ function play(id) {
 
         //1 is PAPER
         case 1:
-            if (c_choice == 1) {//comp is paper
+            if (c_choice == 1) {//comp is paper //paper=house lannister
 
                 //alert the user that there has been a draw
                 //alert("Bloody hell let's call it a DRAW!")
 
-                showResults("Paper", "Paper", "It's a DRAW")
+                showResults("House Lannister", "House Lannister", "DRAW")
             }
             else if (c_choice == 2) {//comp is scissors
     
                 //alert("You LOST to the computer!")
 
-                showResults("Paper", "Scissors", "You Lose")
+                showResults("House Lannister", "House Targaryen", "Fire and Blood")
             }
             else {//comp is scissors
     
                 //alert("You WIN with your PAPER!")
 
-                showResults("Paper", "Rock", "You Win")
+                showResults("House Lannister", "House Stark", "Hear me Roar")
             }
 
             break
         //2 is SCISSORS
         case 2:
 
-            if (c_choice == 2) {//comp is scissors
+            if (c_choice == 2) {//comp is scissors //scissors=house targ
 
                 //alert the user that there has been a draw
                 //alert("Bloody hell let's call it a DRAW!")
 
-                showResults("Scissors", "Scissors", "It's a DRAW")
+                showResults("House Targaryen", "House Targaryen", "DRAW")
             }
             else if (c_choice == 0) {//comp is rock
     
                 //alert("You LOST to the computer!")
 
-                showResults("Scissors", "Rock", "You Lose")
+                showResults("House Targaryen", "House Stark", "Winter is Coming")
             }
             else {//comp is paper
     
                 //alert("You WIN with your SCISSORS!")
 
-                showResults("Scissors", "Paper", "You Win")
+                showResults("House Targaryen", "House Lannister", "Fire and Blood")
             }
             break
 
