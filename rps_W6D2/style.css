@@ -1,7 +1,7 @@
 body{
     display:flex;
     justify-content:center;
-    background-image: url(images/fire_background.jpg);
+    background-image: url(images/obsidian_background.jpg);
 }
 nav{
     display:flex;
@@ -52,7 +52,7 @@ a:link, a:visited{
     width: 175px;
 }
 #scissors_p{
-    height: 150px;
+    height: 157px;
     width: 175px;
 }
 #rock_c{
@@ -64,16 +64,19 @@ a:link, a:visited{
     width: 175px;
 }
 #scissors_c{
-    height: 150px;
+    height: 157px;
     width: 175px;
 }
 .player-heading{
     text-align: center;
+    font-size: 28px;
 }
 .computer-heading{
     text-align: center;
+    font-size: 28px;
 }
 #result{
     position: relative;
-    left: 290px;
+    left: 280px;
+    font-size: 20px;
 }
