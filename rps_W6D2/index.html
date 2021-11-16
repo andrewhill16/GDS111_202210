@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <meta name="author" content="Jay Aguiar">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+
+        <h2 class="player-heading">Player</h2>
+        <div class="player">
+
+            <!-- p = player !-->
+            <img src="images/house_stark.png" id="rock_p" onclick="play(0);"/>
+            <img src="images/house_lannister.png" id="paper_p" onclick="play(1);"/>
+            <img src="images/house_targaryen.png" id="scissors_p" onclick="play(2);"/>
+
+        </div><!--/ .player-->
+
+        <h2 class="computer-heading">Computer</h2>
+        <div class="computer">
+
+            <!-- c = computer !-->
+            <img src="images/house_stark.png" id="rock_c" />
+            <img src="images/house_lannister.png" id="paper_c" />
+            <img src="images/house_targaryen.png" id="scissors_c" />
+
+        </div><!--/ .player-->
+
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <nav>
+            <button id="House Stark">House Stark</button>
+            <button id="House Lannister">House Lannister</button>
+            <button id="House Targaryen">House Targaryen</button>
+        </nav>
+        <div id="result">
+
+            <p>PLAYER CHOSE: <span id="pChoice"></span></p>
+            <p>COMPUTER CHOSE: <span id="cChoice"></span></p>
+            <br>
+            <p>GAME OUTCOME: <span id="results"></span></p>
+
+        </div><!--/ #result-->
+    </div>
+    <script src="rps.js"></script>
+</body>
+</html>
