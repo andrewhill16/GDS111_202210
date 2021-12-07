@@ -54,4 +54,20 @@ function animate() {
     ship.move()
     ship.draw()
 
+    //leaves right side then returns to left side
+    if(ship.x > canvas.width() + 25){
+        ship.x = -25
+    }
+    //leaves left side then returns to right
+    if(ship.x < 0-25){//zero is x coord of left margin 25 is ship length
+        ship.x = 825
+    }
+    //leaves bottom then returns to top
+    if(ship.y > canvas.height() + 25){
+        ship.y = -25
+    }
+    //leaves top then returns to bottom
+    if(ship.y < 0-25){
+        ship.y = 825
+    }
 }

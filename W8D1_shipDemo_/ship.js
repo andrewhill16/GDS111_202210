@@ -24,6 +24,7 @@ function Ship(){
     }
 
     this.draw = function() {
+        /*DRAWING TRIANGLE SHIP TO CNAVAS
         //save current state of camera
         context.save()
 
@@ -44,6 +45,23 @@ function Ship(){
         context.closePath()
         context.stroke()
         context.fill()
+        context.restore()
+        */
+        
+        //IMAGE AS THE SHIP
+
+        var imageObj = new Image()
+        imageObj.src = "images/silver_surfer.png"
+
+        //save the current state of the canvas
+        context.save()
+
+        //move point of origin to ship starting point
+        context.translate(this.x, this.y)
+
+        //draw image on canvas
+        //drawImage(image, x coord of top left, y coord of the top left, width, height)
+        context.drawImage(imageObj, -100, -50, 200, 100)
         context.restore()
     }
 }
