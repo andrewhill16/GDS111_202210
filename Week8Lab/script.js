@@ -17,7 +17,7 @@ function randomRange(high, low){
 }
 
 //function for the Asteroids
-function Asteroid(){
+/*function Asteroid(){
     this.radius = randomRange(10,2)
     this.x = randomRange(c.width - this.radius, 0 + this.radius)
     this.y = randomRange(c.height - this.radius, 0 + this.radius) - c.height
@@ -34,6 +34,13 @@ function Asteroid(){
         context.fill()
         context.restore()
     }
+}*/
+
+var Asteroid = function(x,y,radius,vX){
+    this.x = x
+    this.y = y
+    this.radius = radius
+    this.vX = vX
 }
 
 function gameStart() { 
@@ -227,9 +234,14 @@ gameState[1] = function(){// gameplay state
 
     for(var i = 0; i<asteroids.length; i++){
         //using the distance formula to find distance between ship and asteroid
-        var dX = ship.x - asteroids[i].x
+        /*var dX = ship.x - asteroids[i].x
         var dY = ship.y - asteroids[i].y
-        var dist = Math.sqrt((dX*dX)+(dY*dY))
+        var dist = Math.sqrt((dX*dX)+(dY*dY))*/
+        var radius = 5+(Math.random()*10)
+        var x = canvas.Width+radius+Math.floor(Math.random()*canvas.Width)
+        var y = Math.floor(Math.random()*canvas.Height)
+        var vX = -5-(Math.random()*5)
+        asteroids.push(new Asteroid(x, y, radius, vX))
         
         //checks for collision with asteroid and ends game
         if(detectCollision(dist, (ship.h/2 + asteroids[i].radius))){
