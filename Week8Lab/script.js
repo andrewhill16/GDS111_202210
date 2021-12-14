@@ -11,16 +11,21 @@ var gameState = []
 var currentState = 0
 var ship
 
+var shipSprite = new Image()
+shipSprite.src = "images/silver_surfer.png"
+shipSprite.onload = function(){
+
+}
 
 function randomRange(high, low){
     return Math.random() * (high-low) + low
 }
 
 //function for the Asteroids
-/*function Asteroid(){
+function Asteroid(){
     this.radius = randomRange(10,2)
-    this.x = randomRange(c.width - this.radius, 0 + this.radius)
-    this.y = randomRange(c.height - this.radius, 0 + this.radius) - c.height
+    this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
+    this.y = randomRange(c.height - this.radius, 0 + this.radius) 
     this.vx = randomRange(-5, -10)
     this.vy = randomRange(10,5)
     this.color = "white"
@@ -34,15 +39,7 @@ function randomRange(high, low){
         context.fill()
         context.restore()
     }
-}*/
-
-var Asteroid = function(x,y,radius,vX){
-    this.x = x
-    this.y = y
-    this.radius = radius
-    this.vX = vX
 }
-
 
 function gameStart() { 
     //for loop to create the intances of the asteroids
@@ -57,12 +54,10 @@ function gameStart() {
 
 //function for the player ship
 function PlayerShip(){
-    this.x = x
-    this.y = y
+    this.x = c.width/2
+    this.y = c.height/2
     this.width = 24
     this.height = 24
-    this.halfWidth = this.width/2
-    this.halfHeight = this.height/2
     this.vx = 0
     this.vy = 0
     this.up = false
@@ -94,7 +89,7 @@ function PlayerShip(){
             context.fill()
             context.restore()
         }
-        context.beginPath()
+        /*context.beginPath()
         
         context.fillStyle = "red"
         context.moveTo(0, -13)
@@ -103,6 +98,11 @@ function PlayerShip(){
         context.lineTo(0, -13)
         context.closePath()
         context.fill()
+
+        context.restore()*/
+
+        context.drawImage(shipSprite,-20,-20,40,40)
+        console.log("shipSprite drawImage()")
 
         context.restore()
     }
@@ -135,7 +135,7 @@ function PlayerShip(){
 }//end PlayerShip()
 
 //create the instance of the ship for the game
-var ship = new PlayerShip()
+//var ship = new PlayerShip()
 
 document.addEventListener('keydown', keyPressDown)
 document.addEventListener('keyup', keyPressUp)
@@ -147,8 +147,8 @@ function keyPressDown(e){
         if(e.keyCode === 38){
             ship.up = true
         }
-        if(e.keyCode === 37){
-            ship.left = true
+        if(e.keyCode === 40){
+            ship.down = true
         }
         if(e.keyCode === 39){
             ship.right = true
@@ -186,8 +186,8 @@ function keyPressUp(e){
     if(e.keyCode === 38){
         ship.up = false
     }
-    if(e.keyCode === 37){
-        ship.left = false
+    if(e.keyCode === 40){
+        ship.down = false
     }
     if(e.keyCode === 39){
         ship.right = false
@@ -225,38 +225,30 @@ gameState[1] = function(){// gameplay state
         ship.vy = 3
     }
 
-    if(ship.left == true){
-        ship.vx = -3
+    if(ship.down == true){
+        ship.vy = 10
     }
     else if(ship.right == true){
         ship.vx = 3
     }
     else{
-        ship.vx = 0
+        ship.vx = -3
     }
 
-    for(var i = 0; i<asteroids.length; i++){
-        var radius = 5+(Math.random()*10)
-        var x = canvasWidth+radius+Math.floor(Math.random()*canvasWidth)
-        var y = Math.floor(Math.random()*canvasHeight)
-        var vX = -5-(Math.random()*5)
-
-        
+    for(var i = 0; i < asteroids.length; i++){ 
         //using the distance formula to find distance between ship and asteroid
         var dX = ship.x - asteroids[i].x
         var dY = ship.y - asteroids[i].y
         var dist = Math.sqrt((dX*dX)+(dY*dY))
-
         
         //checks for collision with asteroid and ends game
         if(detectCollision(dist, (ship.h/2 + asteroids[i].radius))){
-           // console.log("We collided with Asteroid " + i)
+            console.log("We collided with Asteroid")
             gameOver = true
             currentState = 2
             //document.removeEventListener('keydown', keyPressDown)
             //document.removeEventListener('keyup', keyPressUp)
         }
-
         //checks to see if asteroid is off screen
         if(asteroids[i].y > c.height + asteroids[i].radius){
             //reset steroids position off screen 
@@ -264,14 +256,15 @@ gameState[1] = function(){// gameplay state
             asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius)
         }
         if(gameOver == false){
-            asteroids[i].y += asteroids[i].vy
+            asteroids[i].x += asteroids[i].vx
+            asteroids[i].draw()
         }
-        asteroids[i].draw()
+        
     }
-
-    ship.draw()
+ 
     if(gameOver == false){
-      ship.move()  
+        ship.move()
+        ship.draw() 
     }
     while(asteroids.length < numAsteroids){
         asteroids.push(new Asteroid())
@@ -295,15 +288,15 @@ function main(){
     //where orignal play state was
     gameState[currentState]()//allows screen to follow appropriate state
     timer = requestAnimationFrame(main)
-    console.log("main hit")
+    //console.log("main hit")
 }
 
 function scoreTimer(){
     if(gameOver == false){
         score++
         //console.log(score)
-        if(score % 5 == 0){
-            numAsteroids += 5
+        if(score % 2 == 0){
+            numAsteroids += 8
             console.log(numAsteroids)
         }
 
