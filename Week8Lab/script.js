@@ -16,6 +16,27 @@ shipSprite.src = "images/silver_surfer.png"
 shipSprite.onload = function(){
 
 }
+var asteroidSprite = new Image()
+asteroidSprite.src = "images/sun.png"
+asteroidSprite.onload = function(){
+
+}
+var startScreen = new Image()
+startScreen.src = "images/startscreen.jpg"
+startScreen.onload = function(){
+
+}
+var playScreen = new Image()
+playScreen.src = "images/playscreen.jpg"
+playScreen.onload = function(){
+
+}
+var endScreen = new Image()
+endScreen.src = "images/endscreen.jpg"
+endScreen.onload = function(){
+
+}
+
 
 function randomRange(high, low){
     return Math.random() * (high-low) + low
@@ -32,14 +53,19 @@ function Asteroid(){
 
     this.draw = function(){
         context.save()
-        context.beginPath()
+        /*context.beginPath()
         context.fillStyle = this.color
-        context.arc(this.x,this.y,this.radius,0,2*Math.PI,true)
+        context.arc(this.x,this.y,this.radius,0,2*Math.PI,true)*/
+        context.drawImage(asteroidSprite, this.x, this.y, this.radius*2, this.radius*3)
+        console.log("asteroidSprite drawImage()")
+        context.restore()
         context.closePath()
         context.fill()
         context.restore()
-    }
+    } 
 }
+
+
 
 function gameStart() { 
     //for loop to create the intances of the asteroids
@@ -48,7 +74,6 @@ function gameStart() {
     ship = new PlayerShip()
     }
 }//end gameStart()
-
 
 
 
@@ -197,12 +222,13 @@ function keyPressUp(e){
 //game states for start menu and gamepley and game over
 gameState[0] = function(){//start screen
     context.save()
-    context.font = "30px Arial"
-    context.fillStyle = "white"
+    context.drawImage(startScreen, 0, 0, 800, 600)
+    context.font = "45px Arial"
+    context.fillStyle = "gold"
     context.textAlign = "center"
-    context.fillText("Asteroid Avoidance", c.width/2, c.height/2 - 30)
-    context.font = "15px Arial"
-    context.fillText("press ENTER to Start", c.width/2, c.height/2 + 20)
+    context.fillText("Avoid The Sun", c.width/2, c.height/2 - 30)
+    context.font = "25px Arial"
+    context.fillText("Press ENTER to Start", c.width/2, c.height/2 + 20)
     context.restore()
 }
 
@@ -210,7 +236,7 @@ gameState[1] = function(){// gameplay state
     //pasted code from main function
     //display score
     context.save()
-    
+    context.drawImage(playScreen, 0, 0, 800, 600)
     context.font = "15px Arial"
     context.fillStyle = "white"
     context.fillText("Score: " + score.toString(), c.width - 150, 30)
@@ -222,14 +248,14 @@ gameState[1] = function(){// gameplay state
         ship.vy = -10
     }
     else{
-        ship.vy = 3
+        ship.vy = 0
     }
 
     if(ship.down == true){
         ship.vy = 10
     }
     else if(ship.right == true){
-        ship.vx = 3
+        ship.vx = 5
     }
     else{
         ship.vx = -3
@@ -273,14 +299,16 @@ gameState[1] = function(){// gameplay state
 
 gameState[2] = function(){//game over
     context.save()
-    context.font = "30px Arial"
-    context.fillStyle = "white"
+    context.drawImage(endScreen, 0, 0, 800, 600)
+    context.font = "45px Arial"
+    context.fillStyle = "gold"
     context.textAlign = "center"
     context.fillText("GAME OVER Your Score was:" +score.toString(), c.width/2, c.height/2 - 30)
-    context.font = "15px Arial"
+    context.font = "25px Arial"
     context.fillText("press ENTER to Restart", c.width/2, c.height/2 + 20)
     context.restore()
 }
+
 
 function main(){
     context.clearRect(0,0, c.width, c.height)
