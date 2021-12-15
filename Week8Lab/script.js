@@ -56,8 +56,8 @@ function gameStart() {
 function PlayerShip(){
     this.x = c.width/2
     this.y = c.height/2
-    this.width = 24
-    this.height = 24
+    this.w = 24
+    this.h = 24
     this.vx = 0
     this.vy = 0
     this.up = false
