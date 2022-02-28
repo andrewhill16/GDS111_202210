@@ -12,9 +12,11 @@ wiz.force=1
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
+sky.img.src = "images/barlow.jpg"
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, height:64,y:canvas.height-32, color:"green"})
+ground.img.src = "images/mrt.jpg"
 
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
@@ -244,10 +246,10 @@ gameStates[`level1`] = function()
 		rbg.x=0; 
 	}
 
-	sky.render()
+	sky.drawStaticImage();
 	
-	var pattern = context.createPattern(clouds.img, `repeat`);
-	ground.color = pattern
+	var groundPattern = context.createPattern(ground.img, "repeat");
+	ground.color = groundPattern
 
 	rbg.drawStaticImage([0,0]);
 	rbg.drawStaticImage([-rbg.width,0]);
