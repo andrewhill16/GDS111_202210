@@ -21,48 +21,48 @@ var caveData ={
 				fps:5,
 				cycle:false,
 				frames:[
-					{width:16, height:16, startX:0, startY:0}
+					{width:64, height:64, startX:0, startY:0}
 				]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:16, height:16, startX:16, startY:0}]
+				frames:[{width:64, height:64, startX:64, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:16, height:16, startX:32, startY:0}]
+				frames:[{width:64, height:64, startX:32, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:16, height:16, startX:48, startY:0}]
+				frames:[{width:64, height:64, startX:48, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:16, height:16, startX:64, startY:0}]
+				frames:[{width:64, height:64, startX:64, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:16, height:16, startX:80, startY:0}]
+				frames:[{width:64, height:64, startX:80, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:16, height:16, startX:96, startY:0}]
+				frames:[{width:64, height:64, startX:96, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:16, height:16, startX:112, startY:0}]
+				frames:[{width:64, height:64, startX:112, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:16, height:16, startX:128, startY:0}]
+				frames:[{width:64, height:64, startX:128, startY:0}]
 			}
 		]
 	}
@@ -85,49 +85,49 @@ var caveData ={
 					fps:5,
 					cycle:true,
 					frames:[
-						{width:16, height:16, startX:0, startY:0}
+						{width:64, height:64, startX:0, startY:0}
 	
 					]
 				},
 				{
 					fps:1,
 					cycle:false,
-					frames:[{width:16, height:16, startX:16, startY:0}]
+					frames:[{width:64, height:64, startX:64, startY:0}]
 				},
 				{
 					fps:1,
 					cycle:false,
-					frames:[{width:16, height:16, startX:32, startY:0}]
+					frames:[{width:64, height:64, startX:32, startY:0}]
 				},
 				{
 					fps:1,
 					cycle:false,
-					frames:[{width:16, height:16, startX:48, startY:0}]
+					frames:[{width:64, height:64, startX:48, startY:0}]
 				},
 				{
 					fps:1,
 					cycle:false,
-					frames:[{width:16, height:16, startX:64, startY:0}]
+					frames:[{width:64, height:64, startX:64, startY:0}]
 				},
 				{
 					fps:1,
 					cycle:false,
-					frames:[{width:16, height:16, startX:80, startY:0}]
+					frames:[{width:64, height:64, startX:80, startY:0}]
 				},
 				{
 					fps:1,
 					cycle:false,
-					frames:[{width:16, height:16, startX:96, startY:0}]
+					frames:[{width:64, height:64, startX:96, startY:0}]
 				},
 				{
 					fps:1,
 					cycle:false,
-					frames:[{width:16, height:16, startX:112, startY:0}]
+					frames:[{width:64, height:64, startX:112, startY:0}]
 				},
 				{
 					fps:1,
 					cycle:false,
-					frames:[{width:16, height:16, startX:128, startY:0}]
+					frames:[{width:64, height:64, startX:128, startY:0}]
 				}
 			]
 		}
@@ -154,48 +154,48 @@ var caveData ={
 						fps:5,
 						cycle:false,
 						frames:[
-							{width:16, height:16, startX:0, startY:0}
+							{width:64, height:64, startX:0, startY:0}
 						]
 					},
 					{
 						fps:1,
 						cycle:false,
-						frames:[{width:16, height:16, startX:16, startY:0}]
+						frames:[{width:64, height:64, startX:64, startY:0}]
 					},
 					{
 						fps:1,
 						cycle:false,
-						frames:[{width:16, height:16, startX:32, startY:0}]
+						frames:[{width:64, height:64, startX:32, startY:0}]
 					},
 					{
 						fps:1,
 						cycle:false,
-						frames:[{width:16, height:16, startX:48, startY:0}]
+						frames:[{width:64, height:64, startX:48, startY:0}]
 					},
 					{
 						fps:1,
 						cycle:false,
-						frames:[{width:16, height:16, startX:64, startY:0}]
+						frames:[{width:64, height:64, startX:64, startY:0}]
 					},
 					{
 						fps:1,
 						cycle:false,
-						frames:[{width:16, height:16, startX:80, startY:0}]
+						frames:[{width:64, height:64, startX:80, startY:0}]
 					},
 					{
 						fps:1,
 						cycle:false,
-						frames:[{width:16, height:16, startX:96, startY:0}]
+						frames:[{width:64, height:64, startX:96, startY:0}]
 					},
 					{
 						fps:1,
 						cycle:false,
-						frames:[{width:16, height:16, startX:112, startY:0}]
+						frames:[{width:64, height:64, startX:112, startY:0}]
 					},
 					{
 						fps:1,
 						cycle:false,
-						frames:[{width:16, height:16, startX:128, startY:0}]
+						frames:[{width:64, height:64, startX:128, startY:0}]
 					}
 				]
 			}
