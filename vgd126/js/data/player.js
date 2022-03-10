@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/snale.png`
+		src:`images/spritesheet.png`
 	},
 	states:{
 		//The idle animation 
@@ -29,23 +29,23 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:128, height:128, startX:0, startY:0},
-				{width:128, height:128, startX:128, startY:0}
+				{width:64, height:64, startX:0, startY:0},
+				{width:64, height:64, startX:64, startY:0}
 				
 			]
 		},
-		//The walwidth:128, height:128,
+		//The walwidth:64, height:64,
 		walk:
 		{
 			fps:1,
 			cycle:true,
 			frames:
 			[
-				{width:128, height:128, startX:0, startY:0},
-				{width:128, height:128, startX:128, startY:0},
-				{width:128, height:128, startX:256, startY:0},
-				{width:128, height:128, startX:384, startY:0},
-				{width:128, height:128, startX:512, startY:0}
+				{width:64, height:64, startX:0, startY:0},
+				{width:64, height:64, startX:64, startY:0},
+				{width:64, height:64, startX:256, startY:0},
+				{width:64, height:64, startX:384, startY:0},
+				{width:64, height:64, startX:512, startY:0}
 			]
 		},
 		//The jump animation 
@@ -55,7 +55,7 @@ var playerData ={
 			cycle:false,
 			frames:
 			[
-				{width:128, height:128, startX:640, startY:0}
+				{width:64, height:64, startX:640, startY:0}
 			]
 		},
 		//The crouch animation 
@@ -65,11 +65,11 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:896, startY:0}
+				{width:64, height:64, startX:768, startY:0},
+				{width:64, height:64, startX:768, startY:0},
+				{width:64, height:64, startX:768, startY:0},
+				{width:64, height:64, startX:768, startY:0},
+				{width:64, height:64, startX:896, startY:0}
 			]
 		},
 		//The attack animation 
@@ -80,13 +80,13 @@ var playerData ={
 			//width:300,
 			frames:
 			[
-				{width:128, height:128, startX:1024, startY:0},
-				{width:128, height:128, startX:1024, startY:0},
-				{width:128, height:128, startX:1024, startY:0},
-				{width:128, height:128, startX:1152, startY:0},
-				{width:128, height:128, startX:1152, startY:0},
-				{width:128, height:128, startX:1152, startY:0},
-				{width:128, height:128, startX:1152, startY:0}
+				{width:64, height:64, startX:1024, startY:0},
+				{width:64, height:64, startX:1024, startY:0},
+				{width:64, height:64, startX:1024, startY:0},
+				{width:64, height:64, startX:1152, startY:0},
+				{width:64, height:64, startX:1152, startY:0},
+				{width:64, height:64, startX:1152, startY:0},
+				{width:64, height:64, startX:1152, startY:0}
 				
 			]
 		}
