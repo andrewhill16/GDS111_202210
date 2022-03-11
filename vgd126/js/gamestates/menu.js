@@ -6,7 +6,7 @@ var startButton = new GameObject({width:128, height:128}).makeSprite(buttonData)
 
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/mrt.jpg"
+menuBackground.img.src = "images/titlescreen.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 
@@ -19,6 +19,8 @@ gameStates[`menu`] =function(){
 		{
 			//Changes to the game state
 			gameStates.changeState(`level1`)
+			sounds.play('backgroundmusic',0)
+			sounds["backgroundmusic"].loop = true
 		}
 
 		//Hover Effect Graffic

@@ -1,6 +1,6 @@
 var buttonData = {
     info:{
-        src:"images/snale.png"
+        src:"images/playbutton.png"
     },
     states:{
         idle:{
@@ -16,7 +16,7 @@ var buttonData = {
             cycle:false,
             frames:
             [
-                {width:128, height:128, startX:1024, startY:0}
+                {width:128, height:128, startX:128, startY:0}
             ]
         }
     }

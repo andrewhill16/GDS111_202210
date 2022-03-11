@@ -9,6 +9,7 @@ var stage = new GameObject({width:canvas.width, height:canvas.height});
 //Avatar
 var wiz = new GameObject({width:128, height:128, spriteData:playerData}).makeSprite(playerData)
 wiz.force=1
+wiz.collisionPoints.bottom.y = wiz.height/2 -34
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
@@ -19,7 +20,7 @@ var ground = new GameObject({width:canvas.width*10, height:64,y:canvas.height-32
 ground.img.src = "images/ground.png"
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
+var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"transparent"})
 plat.img.src = "images/platform.png"
 
 //A level object when it is moved other objects move with it.
@@ -82,10 +83,10 @@ var currentBullet = 0;
 for(let i=0; i<100; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
-	//bullets[i].img.src="images/mrt.jpg"
-	bullets[i].makeSprite(playerData)
+	bullets[i].img.src="images/fireball.png"
+	//bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
-	bullets[i].changeState(`walk`)
+	//bullets[i].changeState(`walk`)
 }
 
 //console.log(bullets)
@@ -141,7 +142,7 @@ gameStates[`level1`] = function()
 		wiz.canJump = false;
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
-		//sounds.play(`splode`,1)
+		sounds.play(`jump`,1)
 	}
 	shotTimer--;
 	if(shotTimer <=0)
@@ -163,11 +164,11 @@ gameStates[`level1`] = function()
 
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
-			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
-			bullets[currentBullet].y = wiz.y + 20;
+			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 20) ;
+			bullets[currentBullet].y = wiz.y - 20;
 			bullets[currentBullet].dir = wiz.dir;
 			
-			//sounds.play(`splode`,1)
+			sounds.play(`fireball`,0)
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)
@@ -258,10 +259,11 @@ gameStates[`level1`] = function()
 	bg.drawStaticImage([0,0]);
 	
 	
+	
 	//rbg.render(`drawStaticImage`, [0,0])
 
 	rects.render(`drawRect`)
-	
+	plat.drawStaticImage([-plat.width/2,-plat.height/2-15]);
 
 	/*context.beginPath()
 	context.moveTo(0,wiz.bottom.y)
@@ -273,9 +275,10 @@ gameStates[`level1`] = function()
 	
 	for(let i=0; i<bullets.length; i++)
 	{
-		if(bullets[i].overlap(stage)) bullets[i].vy+=1;
+		//if(bullets[i].overlap(stage)) bullets[i].vy+=1;
 		bullets[i].move()
-		bullets[i].play(function(){return}).drawSprite()
+		//bullets[i].play(function(){return}).drawSprite()
+		bullets[i].drawStaticImage()
 		//bullets[i].angle+=10
 		while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
 		{
