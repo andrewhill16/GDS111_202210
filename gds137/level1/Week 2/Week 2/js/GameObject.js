@@ -2,7 +2,7 @@
 function GameObject()
 {
 	//player's location
-	this.x = 40
+	this.x = canvas.width/2;
 	this.y = canvas.height/2;
 	
 	//player's dimensions
