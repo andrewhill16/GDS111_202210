@@ -49,9 +49,9 @@ function animate()
 		ball.vx = -Math.random() * 10;
 		ball.vy =Math.random() * 10;
 	}
-	if(ball.x < 0 + ball.width/2)
+	if(ball.x < 0 - ball.width/2)
 	{
-		ball.x = 0 + ball.width/2
+		ball.x = canvas.width/2
 		ball.vx = Math.random() * 10;
 	}
 	if(ball.y > canvas.height - ball.height/2)
