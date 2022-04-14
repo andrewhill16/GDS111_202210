@@ -2,6 +2,8 @@ var canvas;
 var context;
 var timer;
 var interval = 1000/60;
+var p1wins = 0;
+var p2wins = 0;
 
 var player1;
     canvas = document.getElementById("canvas");
@@ -13,21 +15,15 @@ var player1;
     timer = setInterval(animate, interval);
 
 var ball;
-    canvas = document.getElementById("canvas");
-    context = canvas.getContext("2d");
     ball = new GameObject()
     ball.x = canvas.width/2
     ball.y = canvas.height/2
-    timer = setInterval(animate, interval);
 
 var player2;
-	canvas = document.getElementById("canvas");
-	context = canvas.getContext("2d");
 	player2 = new GameObject();
 	player2.width = 20;
 	player2.height = 200;
     player2.x = canvas.width - 40;
-	timer = setInterval(animate, interval);
 function animate()
 {
     context.clearRect(0,0,canvas.width, canvas.height);	
@@ -72,38 +68,40 @@ function animate()
 	if(ball.x > canvas.width + ball.width/2)
 	{
 		ball.x = canvas.width/2
-		ball.vx = -Math.random() * 10;
+		ball.vx = -6;
+		p1wins += 1;
 	}
 	if(ball.x < 0 - ball.width/2)
 	{
 		ball.x = canvas.width/2
-		ball.vx = Math.random() * 10;
+		ball.vx = 6;
+		p2wins += 1;
 	}
 	if(ball.y > canvas.height - ball.height/2)
 	{
 		ball.y = canvas.height - ball.height/2
-		ball.vy = -Math.random() * 20;
+		ball.vy = -6;
 	}
 	if(ball.y < 0 + ball.height/2)
 	{
 		ball.y = 0 + ball.height/2
-		ball.vy = Math.random() * 20;
+		ball.vy = 6;
 	}
 
 	if(ball.hitTestObject(player1))
 	{
 		if(ball.y < player1.y - player1.height * .33)
 		{
-			ball.vy = -Math.random() * 10;
-			ball.vx = Math.random() * 15;
+			ball.vy = -6;
+			ball.vx = 6;
 		}
 		else if(ball.y > player1.y + player1.height * .33)
 		{
-			ball.vy = Math.random() * 10;
-			ball.vx = Math.random() * 15;
+			ball.vy = 6;
+			ball.vx = 6;
 		}
 		else{
-			ball.vx = Math.random() * 15;
+			ball.vx = 6;
 			ball.vy = 0;
 		}
 	}
@@ -111,19 +109,26 @@ function animate()
 	{
 		if(ball.y < player2.y - player1.height * .33)
 		{
-			ball.vy = -Math.random() * 10;
-			ball.vx = -Math.random() * 15;
+			ball.vy = -6;
+			ball.vx = -6;
 		}
 		else if(ball.y > player2.y + player1.height * .33)
 		{
-			ball.vy = Math.random() * 10;
-			ball.vx = -Math.random() * 15;
+			ball.vy = 6;
+			ball.vx = -6;
 		}
 		else{
-			ball.vx = -Math.random() * 15;
+			ball.vx = -6;
 			ball.vy = 0;
 		}
 	}
-	//Update the Screen
+
 	ball.drawCircle();
+
+	context.font = "30px Arial";
+	context.textAlign = "center";
+	context.fillText("Player 1 | Player 2", canvas.width/2, 35)
+	context.font = "15px Arial";
+	context.textAlign = "center";
+	context.fillText()
 }
