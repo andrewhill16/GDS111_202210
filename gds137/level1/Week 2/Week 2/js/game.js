@@ -20,6 +20,14 @@ var ball;
     ball.y = canvas.height/2
     timer = setInterval(animate, interval);
 
+var player2;
+	canvas = document.getElementById("canvas");
+	context = canvas.getContext("2d");
+	player2 = new GameObject();
+	player2.width = 20;
+	player2.height = 200;
+    player2.x = canvas.width - 40;
+	timer = setInterval(animate, interval);
 function animate()
 {
     context.clearRect(0,0,canvas.width, canvas.height);	
@@ -41,13 +49,30 @@ function animate()
     }
     player1.drawRect();
 
+	if(up)
+	{
+		console.log("Moving Up");
+		player2.y += -6;
+	}
+	if(down)
+	{
+		console.log("Moving Down");
+		player2.y += 6;
+	}
+    if(player2.y > canvas.height - player2.height/2){
+        player2.y -= player2.height/4
+    }
+    if(player2.y < 0 + player2.height/2){
+        player2.y += player2.height/4
+    }
+    player2.drawRect();
+
     ball.move()
 
-	if(ball.x > canvas.width - ball.width/2)
+	if(ball.x > canvas.width + ball.width/2)
 	{
-		ball.x = canvas.width - ball.width/2
+		ball.x = canvas.width/2
 		ball.vx = -Math.random() * 10;
-		ball.vy =Math.random() * 10;
 	}
 	if(ball.x < 0 - ball.width/2)
 	{
@@ -70,15 +95,32 @@ function animate()
 		if(ball.y < player1.y - player1.height * .33)
 		{
 			ball.vy = -Math.random() * 10;
-			ball.vx = Math.random() * 10;
+			ball.vx = Math.random() * 15;
 		}
 		else if(ball.y > player1.y + player1.height * .33)
 		{
 			ball.vy = Math.random() * 10;
-			ball.vx = Math.random() * 10;
+			ball.vx = Math.random() * 15;
 		}
 		else{
-			ball.vx = Math.random() * 10;
+			ball.vx = Math.random() * 15;
+			ball.vy = 0;
+		}
+	}
+	if(ball.hitTestObject(player2))
+	{
+		if(ball.y < player2.y - player1.height * .33)
+		{
+			ball.vy = -Math.random() * 10;
+			ball.vx = -Math.random() * 15;
+		}
+		else if(ball.y > player2.y + player1.height * .33)
+		{
+			ball.vy = Math.random() * 10;
+			ball.vx = -Math.random() * 15;
+		}
+		else{
+			ball.vx = -Math.random() * 15;
 			ball.vy = 0;
 		}
 	}
