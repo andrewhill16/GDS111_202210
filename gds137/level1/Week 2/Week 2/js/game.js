@@ -69,13 +69,13 @@ function animate()
 	{
 		ball.x = canvas.width/2
 		ball.vx = -10;
-		p1wins += 1;
+		p2wins += 1;
 	}
 	if(ball.x < 0 - ball.width/2)
 	{
 		ball.x = canvas.width/2
 		ball.vx = 10;
-		p2wins += 1;
+		p1wins += 1;
 	}
 	if(ball.y > canvas.height - ball.height/2)
 	{
