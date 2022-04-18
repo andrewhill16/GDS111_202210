@@ -30,12 +30,12 @@ function animate()
     if(w)
 	{
 		console.log("Moving Up");
-		player1.y += -6;
+		player1.y += -8;
 	}
 	if(s)
 	{
 		console.log("Moving Down");
-		player1.y += 6;
+		player1.y += 8;
 	}
     if(player1.y > canvas.height - player1.height/2){
         player1.y -= player1.height/4
@@ -48,12 +48,12 @@ function animate()
 	if(up)
 	{
 		console.log("Moving Up");
-		player2.y += -6;
+		player2.y += -8;
 	}
 	if(down)
 	{
 		console.log("Moving Down");
-		player2.y += 6;
+		player2.y += 8;
 	}
     if(player2.y > canvas.height - player2.height/2){
         player2.y -= player2.height/4
@@ -68,40 +68,40 @@ function animate()
 	if(ball.x > canvas.width + ball.width/2)
 	{
 		ball.x = canvas.width/2
-		ball.vx = -6;
+		ball.vx = -10;
 		p1wins += 1;
 	}
 	if(ball.x < 0 - ball.width/2)
 	{
 		ball.x = canvas.width/2
-		ball.vx = 6;
+		ball.vx = 10;
 		p2wins += 1;
 	}
 	if(ball.y > canvas.height - ball.height/2)
 	{
 		ball.y = canvas.height - ball.height/2
-		ball.vy = -6;
+		ball.vy = -10;
 	}
 	if(ball.y < 0 + ball.height/2)
 	{
 		ball.y = 0 + ball.height/2
-		ball.vy = 6;
+		ball.vy = 10;
 	}
 
 	if(ball.hitTestObject(player1))
 	{
 		if(ball.y < player1.y - player1.height * .33)
 		{
-			ball.vy = -6;
-			ball.vx = 6;
+			ball.vy = -10;
+			ball.vx = 10;
 		}
 		else if(ball.y > player1.y + player1.height * .33)
 		{
-			ball.vy = 6;
-			ball.vx = 6;
+			ball.vy = 10;
+			ball.vx = 10;
 		}
 		else{
-			ball.vx = 6;
+			ball.vx = 10;
 			ball.vy = 0;
 		}
 	}
@@ -109,16 +109,16 @@ function animate()
 	{
 		if(ball.y < player2.y - player1.height * .33)
 		{
-			ball.vy = -6;
-			ball.vx = -6;
+			ball.vy = -10;
+			ball.vx = -10;
 		}
 		else if(ball.y > player2.y + player1.height * .33)
 		{
-			ball.vy = 6;
-			ball.vx = -6;
+			ball.vy = 10;
+			ball.vx = -10;
 		}
 		else{
-			ball.vx = -6;
+			ball.vx = -10;
 			ball.vy = 0;
 		}
 	}
@@ -129,6 +129,10 @@ function animate()
 	context.textAlign = "center";
 	context.fillText("Player 1 | Player 2", canvas.width/2, 35)
 	context.font = "15px Arial";
+	context.textAlign = "left";
+	context.fillText(p1wins, canvas.width/2, 55)
 	context.textAlign = "center";
-	context.fillText()
+	context.fillText("|", canvas.width/2, 55)
+	context.textAlign = "right";
+	context.fillText(p2wins, canvas.width/2, 55)
 }
