@@ -125,6 +125,16 @@ function animate()
 
 	ball.drawCircle();
 
+	context.save();
+	context.strokeStyle = "yellow";
+	context.beginPath();
+	context.moveTo(canvas.width/2, 0);
+	context.lineTo(canvas.width/2, canvas.height);
+	context.closePath();
+	context.lineWidth = 20;
+	context.stroke();
+	context.restore();
+
 	context.font = "30px Arial";
 	context.textAlign = "center";
 	context.fillText("Player 1 | Player 2", canvas.width/2, 35)
