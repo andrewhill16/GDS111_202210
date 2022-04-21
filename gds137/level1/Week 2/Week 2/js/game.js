@@ -4,6 +4,7 @@ var timer;
 var interval = 1000/60;
 var p1wins = 0;
 var p2wins = 0;
+var img = document.getElementById("ric");
 
 var player1;
     canvas = document.getElementById("canvas");
