@@ -2,18 +2,18 @@ var canvas;
 var context;
 var timer;
 var interval = 1000/60;
+canvas = document.getElementById("canvas");
+context = canvas.getContext("2d");
+timer = setInterval(animate, interval);
 var p1wins = 0;
 var p2wins = 0;
 var img = document.getElementById("ric");
 
 var player1;
-    canvas = document.getElementById("canvas");
-    context = canvas.getContext("2d");
     player1 = new GameObject();
 	player1.width = 20;
 	player1.height = 200;
     player1.x = 40;
-    timer = setInterval(animate, interval);
 
 var ball;
     ball = new GameObject()
@@ -125,7 +125,7 @@ function animate()
 	}
 
 	ball.drawCircle();
-
+	
 	context.save();
 	context.strokeStyle = "yellow";
 	context.beginPath();
@@ -146,4 +146,6 @@ function animate()
 	context.fillText("|", canvas.width/2, 55)
 	context.textAlign = "right";
 	context.fillText(p2wins, canvas.width/2, 55)
+
+	context.drawImage(img, ball.x - 75, ball.y - 75, 150, 150);
 }
