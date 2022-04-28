@@ -17,6 +17,9 @@ function GameObject()
 	this.color = "#ff0000";
 
 	this.force = 1;
+
+	var gravity = .5;
+	var frictionX = .85
 	
 	//This draws the player to the screen
 	this.drawRect = function()
@@ -48,7 +51,14 @@ function GameObject()
 		this.x += this.vx;
 		this.y += this.vy;
 	}
-	
+
+	this.vmove = function()
+	{
+		this.vy += gravity;
+		this.y += this.vy;
+		this.x += this.vx;
+	}
+
 	this.left = function() 
 	{
 		return this.x - this.width/2;
