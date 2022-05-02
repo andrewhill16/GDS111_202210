@@ -78,10 +78,22 @@ function animate()
 	if(left)
 	{
 		paddle.x += -paddle.vx;
+		paddle.vx += paddle.ax * paddle.force;
 	}
 	if(right)
 	{
 		paddle.x += paddle.vx;
+		paddle.vx +=  paddle.ax * paddle.force;
+	}
+	if(paddle.x > canvas.width - paddle.width/2)
+	{
+		paddle.x = canvas.width - paddle.width/2;
+		paddle.vx = 0
+	}
+	if(paddle.x < 0 + paddle.width/2)
+	{
+		paddle.x = 0 + paddle.width/2;
+		paddle.vx = 0
 	}
 	paddle.drawRect();
 
@@ -170,8 +182,31 @@ function animate()
 
 	if(ball.hitTestObject(paddle))
 	{
-		ball.vy = -30;
-		score += 1;
+		score +=1;
+		if(ball.x < paddle.x - paddle.width/6)
+		{
+			ball.vy = -35;
+			ball.vx = -ball.force;
+		}
+		if(ball.x < paddle.x - paddle.width/3)
+		{
+			ball.vy = -35;
+			ball.vx = -ball.force * 5;
+		}
+		if(ball.x > paddle.x + paddle.width/6)
+		{
+			ball.vy = -35;
+			ball.vx = ball.force;
+		}
+		if(ball.x > paddle.x + paddle.width/3)
+		{
+			ball.vy = -35;
+			ball.vx = ball.force * 5;
+		}
+		else
+		{
+			ball.vy = -35;
+		}
 	}
 
 	ball.drawCircle();
@@ -208,5 +243,9 @@ function animate()
 	context.stroke();
 	context.restore();
 
-
+	context.font = "16px Arial";
+	context.textAlign = "right";
+	context.fillText("Score - ", 80, 25);
+	context.textAlign = "left";
+	context.fillText(score, 85, 25);
 }
