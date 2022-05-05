@@ -13,8 +13,8 @@ function GameObject()
 	this.vx = 4;
 	this.vy = 4;
 
-	this.ax = 1;
-	this.ay = 1;
+	this.ax = 3;
+	this.ay = 3;
 	
 	//player's color
 	this.color = "#ff0000";
@@ -22,7 +22,7 @@ function GameObject()
 	this.force = 1;
 
 	var gravity = .5;
-	var frictionX = .85
+	var frictionX = .97;
 	
 	//This draws the player to the screen
 	this.drawRect = function()

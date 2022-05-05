@@ -77,14 +77,16 @@ function animate()
     player2.drawRect();*/
 	if(left)
 	{
-		paddle.x += -paddle.vx;
-		paddle.vx += paddle.ax * paddle.force;
+		//paddle.x += paddle.vx;
+		paddle.vx += paddle.ax * -paddle.force;
 	}
 	if(right)
 	{
-		paddle.x += paddle.vx;
+		//paddle.x += paddle.vx;
 		paddle.vx +=  paddle.ax * paddle.force;
 	}
+	paddle.vx *= frictionX;
+	paddle.x += paddle.vx;
 	if(paddle.x > canvas.width - paddle.width/2)
 	{
 		paddle.x = canvas.width - paddle.width/2;
@@ -94,6 +96,14 @@ function animate()
 	{
 		paddle.x = 0 + paddle.width/2;
 		paddle.vx = 0
+	}
+	if(paddle.x > canvas.width/2 + paddle.width/2)
+	{
+		paddle.vx *= frictionX;
+	}
+	if(paddle.x < canvas.width/2 - paddle.width/2)
+	{
+		paddle.vx *= frictionX;
 	}
 	paddle.drawRect();
 
@@ -136,7 +146,8 @@ function animate()
 	if(ball.y > canvas.height - ball.height/2)
 	{
 		ball.y = canvas.height - ball.height/2;
-		ball.vy = -10;
+		//ball.vy = -10;
+		ball.vy = -ball.vy * .67;
 		score = 0;
 	}
 	if(ball.y < 0 + ball.height/2)
