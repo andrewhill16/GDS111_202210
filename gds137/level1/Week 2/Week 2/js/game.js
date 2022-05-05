@@ -22,6 +22,7 @@ var ball;
     ball.x = canvas.width/2
     ball.y = canvas.height/2
 	ball.width = 80;
+	ball.height = ball.width;
 	ball.color = "#ff00ff";
 
 var player2;
@@ -193,30 +194,27 @@ function animate()
 
 	if(ball.hitTestObject(paddle))
 	{
+		ball.vy = -35;
 		score +=1;
 		if(ball.x < paddle.x - paddle.width/6)
 		{
-			ball.vy = -35;
+			ball.y = paddle.y - ball.height/2;
 			ball.vx = -ball.force;
 		}
 		if(ball.x < paddle.x - paddle.width/3)
 		{
-			ball.vy = -35;
+			ball.y = paddle.y - ball.height/2;
 			ball.vx = -ball.force * 5;
 		}
 		if(ball.x > paddle.x + paddle.width/6)
 		{
-			ball.vy = -35;
+			ball.y = paddle.y - ball.height/2;
 			ball.vx = ball.force;
 		}
 		if(ball.x > paddle.x + paddle.width/3)
 		{
-			ball.vy = -35;
+			ball.y = paddle.y - ball.height/2;
 			ball.vx = ball.force * 5;
-		}
-		else
-		{
-			ball.vy = -35;
 		}
 	}
 
