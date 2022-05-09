@@ -30,7 +30,8 @@ function GameObject(obj)
 	
 	//whether or not the object can jump
 	this.canJump = false;
-	this.jumpHeight = -25;
+	this.jumpHeight = -35;
+	this.platout = false;
 	
 
 	this.drawRect = function()
