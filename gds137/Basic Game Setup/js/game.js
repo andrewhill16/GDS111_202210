@@ -1,4 +1,4 @@
-
+//--------------------------Hitting D will spawn a platform below the player.
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 
