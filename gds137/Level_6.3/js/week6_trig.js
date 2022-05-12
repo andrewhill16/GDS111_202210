@@ -46,6 +46,7 @@ function animate()
 	//w and s move forward and backward
 	//a and d rotate the triangle
 	angularMovement();
+
 	
 	//-------------------------------------------------------------------------------------------------------------------------
 	//------------------------------------------------------INSTRUCTIONS-------------------------------------------------------
@@ -57,6 +58,13 @@ function animate()
 	//------------------------------------------------------END OF INSTRUCTIONS-------------------------------------------------
 	//--------------------------------------------------------------------------------------------------------------------------
 	
+	var dx = player.x - turret.x;
+	var dy = player.y - turret.y;
+	
+	var radians = Math.atan2(dx, dy);
+	
+	turret.angle = radians * 180/Math.PI;
+
 	if(bullet.hitTestObject(canvasTrigger) == false)
 	{
 	 bullet.x = turret.x;
@@ -67,11 +75,6 @@ function animate()
 		bullet.vx = Math.cos(turret.angle * Math.PI/180) * 5;
 		bullet.vy = Math.sin(turret.angle * Math.PI/180) * 5;
 	}
-
-	var disX = player.x - turret.x;
-	var disY = player.y - turret.y;
-	var hyp = Math.sqrt(disX * disX) + Math.sqrt(disY * disY);
-	
 
 	bullet.move();
 	player.drawTriangle();
