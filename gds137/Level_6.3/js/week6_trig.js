@@ -61,7 +61,7 @@ function animate()
 	var dx = player.x - turret.x;
 	var dy = player.y - turret.y;
 	
-	var radians = Math.atan2(dx, dy);
+	var radians = Math.atan2(dy, dx);
 	
 	turret.angle = radians * 180/Math.PI;
 
