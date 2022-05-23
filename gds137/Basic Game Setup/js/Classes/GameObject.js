@@ -14,6 +14,9 @@ function GameObject(obj)
 		
 		//the angle that the graphic is drawn facing.
 		this.angle = 0;
+		this.canJetpack = false;
+		this.fuel = 300;
+		this.toggled = false;
 		
 		
 		//------Allows us to pass object literals into the class to define its properties--------//

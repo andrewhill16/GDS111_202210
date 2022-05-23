@@ -15,13 +15,37 @@ states[""] = function()
 }
 ----------------------------------------------------------------------*/
 
-var platform = new GameObject()
+var platform1 = new GameObject()
 {
-	platform.width = canvas.width;
-	platform.height = 30;
-	platform.x = canvas.width/2;
-	platform.y = canvas.height - platform.height
-	platform.color = "#00ff00";
+	platform1.width = canvas.width;
+	platform1.height = 30;
+	platform1.x = canvas.width/2;
+	platform1.y = canvas.height - platform1.height
+	platform1.color = "#00ff00";
+}
+var platform2 = new GameObject();
+{
+	platform2.width = 170;
+	platform2.height = 30;
+	platform2.x = 50;
+	platform2.y = platform2.height;
+	platform2.color = "#00ff00";
+}
+var platform3 = new GameObject();
+{
+	platform3.width = 170;
+	platform3.height = 30;
+	platform3.x = 50;
+	platform3.y = platform3.height * 4;
+	platform3.color = "#00ff00";
+}
+var door = new GameObject();
+{
+	door.width = 10;
+	door.height = platform3.height * 3;
+	door.x = 100;
+	door.y = 90;
+	door.color = "#00ffff";
 }
 var player = new GameObject()
 {
@@ -36,6 +60,14 @@ var spawnplat = new GameObject()
 	spawnplat.x = 10000;
 	spawnplat.y = 10000;
 	spawnplat.color = "#ff0000";
+}
+var button = new GameObject()
+{
+	button.height = 40;
+	button.width = 40;
+	button.x = platform1.x + button.height * 4;
+	button.y = canvas.height - button.width - platform1.height;
+	button.color = "#ff0000";
 }
 var fX = .85;
 var fY = .97;
@@ -54,9 +86,28 @@ function animate()
 	if(w && player.canJump && player.vy ==0)
 	{
 		player.canJump = false;
+		player.canJetpack = true;
 		player.vy += player.jumpHeight;
 	}
-
+	if(w && player.canJetpack)
+	{
+		player.vy = -10;
+		player.fuel--;
+		console.log(player.fuel)
+		if(player.fuel < 150)
+		{
+			player.color = "#00ffff"
+		}
+		if(player.fuel < 50)
+		{
+			player.color = "#ff00ff"
+		}
+		if(player.fuel <= 0)
+		{
+			player.color = "#000000"
+			player.canJetpack = false;
+		}
+	}
 	if(a)
 	{
 		player.vx += -player.ax * player.force;
@@ -80,23 +131,23 @@ function animate()
 	player.x += Math.round(player.vx);
 	player.y += Math.round(player.vy);
 
-	while(platform.hitTestPoint(player.bottom()) && player.vy >=0)
+	while(platform1.hitTestPoint(player.bottom()) && player.vy >=0)
 	{
 		player.y--;
 		player.vy = 0;
 		player.canJump = true;
 	}
-	while(platform.hitTestPoint(player.left()) && player.vx <=0)
+	while(platform1.hitTestPoint(player.left()) && player.vx <=0)
 	{
 		player.x++;
 		player.vx = 0;
 	}
-	while(platform.hitTestPoint(player.right()) && player.vx >=0)
+	while(platform1.hitTestPoint(player.right()) && player.vx >=0)
 	{
 		player.x--;
 		player.vx = 0;
 	}
-	while(platform.hitTestPoint(player.top()) && player.vy <=0)
+	while(platform1.hitTestPoint(player.top()) && player.vy <=0)
 	{
 		player.y++;
 		player.vy = 0;
@@ -124,9 +175,21 @@ function animate()
 		player.vy = 0;
 	}
 
+	if(player.hitTestObject(button))
+	{
+		button.toggled = true;
+		button.color = "#ff00ff";
+		door.x = 10000;
+		door.y = 10000;
+	}
 
-	platform.drawRect();
+
+	platform1.drawRect();
+	platform2.drawRect();
+	platform3.drawRect();
+	door.drawRect();
 	player.drawRect();
+	button.drawRect();
 	if(platout == true)
 	{
 		spawnplat.drawRect();
