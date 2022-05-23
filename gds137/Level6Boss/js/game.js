@@ -92,6 +92,11 @@ function animate()
 			player.color = "#ff0000";
 			setTimeout(resetColor, 500)
 			score = 0;
+			for(var j = 0; j < circles.length; j++)
+			{
+				circles[j].y = 0 - rand(20, 250);
+				squares[j].y = 0 - rand(20, 250);
+			}
 		}
 	}
 	for(var p = 0; p < squares.length; p++)
