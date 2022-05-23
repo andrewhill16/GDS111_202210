@@ -1,4 +1,6 @@
-//--------------------------Hitting D will spawn a platform below the player.
+//--------------------------Hitting S will spawn a platform below the player.
+//--------------------------Hitting W while airborne uses the jetpack.
+//--------------------------Touching the switch will toggle it and open the door.
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 
@@ -179,8 +181,8 @@ function animate()
 	{
 		button.toggled = true;
 		button.color = "#ff00ff";
-		door.x = 10000;
-		door.y = 10000;
+		door.vy = -30;
+		door.y += door.vy;
 	}
 
 
