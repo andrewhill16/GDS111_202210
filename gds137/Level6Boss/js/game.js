@@ -110,6 +110,16 @@ function animate()
 			score += 1;
 		}
 	}
+	if(player.x > canvas.width - player.width/2)
+	{
+		player.x = canvas.width - player.width/2;
+		player.vx = 0
+	}
+	if(player.x < 0 + player.width/2)
+	{
+		player.x = 0 + player.width/2;
+		player.vx = 0
+	}
 
 	player.x += Math.round(player.vx);
 	player.y += Math.round(player.vy);
