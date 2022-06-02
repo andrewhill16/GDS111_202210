@@ -83,6 +83,14 @@ function GameObject(obj)
 		this.x += this.vx;
 		this.y += this.vy;
 	}
+	this.moveright = function()
+	{
+		this.x += 4;
+	}
+	this.moveleft = function()
+	{
+		this.x += -4;
+	}
 	
 	
 	//---------Returns object's for the top, bottom, left and right of an object's bounding box.

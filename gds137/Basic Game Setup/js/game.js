@@ -71,6 +71,15 @@ var button = new GameObject()
 	button.y = canvas.height - button.width - platform1.height;
 	button.color = "#ff0000";
 }
+var movingplat = new GameObject()
+{
+	movingplat.height = 20;
+	movingplat.width = 250;
+	movingplat.x = canvas.width/2;
+	movingplat.y = canvas.height/2;
+	movingplat.color = "#ff0000";
+	movingplat.vx = 4;
+}
 var fX = .85;
 var fY = .97;
 var gravity = 1;
@@ -155,6 +164,41 @@ function animate()
 		player.vy = 0;
 	}
 
+	while(movingplat.hitTestPoint(player.bottom()) && player.vy >=0)
+	{
+		player.y--;
+		player.vy = 0;
+		player.vx = movingplat.vx;
+		player.canJump = true;
+	}
+	while(movingplat.hitTestPoint(player.left()) && player.vx <=0)
+	{
+		player.x++;
+		player.vx = 0;
+	}
+	while(movingplat.hitTestPoint(player.right()) && player.vx >=0)
+	{
+		player.x--;
+		player.vx = 0;
+	}
+	while(movingplat.hitTestPoint(player.top()) && player.vy <=0)
+	{
+		player.y++;
+		player.vy = 0;
+	}
+
+	movingplat.move();
+	if(movingplat.x > canvas.width - movingplat.width/2)
+	{
+		movingplat.x = canvas.width - movingplat.width/2
+		movingplat.vx = -4;
+	}
+	if(movingplat.x < 0 + movingplat.width/2)
+	{
+		movingplat.x = 0 + movingplat.width/2
+		movingplat.vx = 4;
+	}
+
 	while(spawnplat.hitTestPoint(player.bottom()) && player.vy >=0)
 	{
 		player.y--;
@@ -192,6 +236,7 @@ function animate()
 	door.drawRect();
 	player.drawRect();
 	button.drawRect();
+	movingplat.drawRect();
 	if(platout == true)
 	{
 		spawnplat.drawRect();
